@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ContosoPizza.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace ContosoPizza2.Data
+{
+    public class PizzaContext : DbContext
+    {
+        public PizzaContext (DbContextOptions<PizzaContext> options)
+        : base(options)
+        {
+            
+        }
+        public DbSet<Pizza> Pizzas => Set<Pizza>();
+        public DbSet<Topping> Toppings => Set<Topping>();
+        public DbSet<Sauce> Sauces => Set<Sauce>();
+   
+
+
+    }
+}
